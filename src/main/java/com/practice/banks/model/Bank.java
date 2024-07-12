@@ -14,9 +14,10 @@ import java.util.Set;
 
 /* @TODO:
     1. Split this class into a dto with @data and a class @entity;
-    2. Find a way to parse huge XML into Java fast
-    3. DO NOT FORGET TO CHANGE TYPES OF DATA, STRING!!!!!!!!!!!
-
+    2. XML -> JSON -> db;
+    3. Getting rid of String is not top priority, but it's still something I must do
+    4. Don't forget about deserializers
+    5.
  */
 
 @Entity

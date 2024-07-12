@@ -1,0 +1,30 @@
+<ED807 xmlns="urn:cbr-ru:ed:v2.0" EDNo="707497754" EDDate="2022-06-29" EDAuthor="4583001999" CreationReason="FCBD" CreationDateTime="2022-06-29T18:01:15Z" InfoTypeCode="FIRR" BusinessDay="2022-06-30" DirectoryVersion="1">
+    <BICDirectoryEntry BIC="041280103">
+        <ParticipantInfo NameP="УФК по Астраханской области" CntrCd="RU" Rgn="12" Ind="414056" Tnp="г" Nnp="Астрахань" Adr="ул Латышева, 6 Г" DateIn="2010-06-08" PtType="52" Srvcs="3" XchType="1" UID="1280002005" ParticipantStatus="PSAC"/>
+            <Accounts Account="40116810100000010010" RegulationAccountType="TRSA" CK="99" AccountCBRBIC="041280002" DateIn="2013-01-09" AccountStatus="ACAC"/>
+            <Accounts Account="40116810400000010011" RegulationAccountType="TRSA" CK="99" AccountCBRBIC="041280002" DateIn="2013-01-09" AccountStatus="ACAC"/>
+            <Accounts Account="40116810700000010012" RegulationAccountType="TRSA" CK="99" AccountCBRBIC="041280002" DateIn="2013-01-09" AccountStatus="ACAC"/>
+            <Accounts Account="40116810000000010013" RegulationAccountType="TRSA" CK="99" AccountCBRBIC="041280002" DateIn="2013-01-09" AccountStatus="ACAC"/>
+            <Accounts Account="40116810300000010014" RegulationAccountType="TRSA" CK="99" AccountCBRBIC="041280002" DateIn="2013-01-09" AccountStatus="ACAC"/>
+            <Accounts Account="40116810600000010015" RegulationAccountType="TRSA" CK="99" AccountCBRBIC="041280002" DateIn="2013-01-09" AccountStatus="ACAC"/>
+    </BICDirectoryEntry>
+    <BICDirectoryEntry BIC="044525597">
+        <ParticipantInfo NameP="КУ "МИЛЛЕНИУМ БАНК" (ЗАО) - ГК "АСВ"" RegN="3423" CntrCd="RU" Rgn="45" Ind="109240" Tnp="г" Nnp="Москва" Adr="ул Высоцкого, 4" DateIn="2016-05-17" PtType="90" Srvcs="1" XchType="0" UID="4525597000" ParticipantStatus="PSAC">
+            <RstrList Rstr="URRS" RstrDate="2016-05-17"/>
+        </ParticipantInfo>
+            <Accounts Account="30101810645250000597" RegulationAccountType="CRSA" CK="82" AccountCBRBIC="044525000" DateIn="2015-09-14" AccountStatus="ACAC"/>
+    </BICDirectoryEntry>
+<BICDirectoryEntry BIC="044525603">
+<ParticipantInfo NameP="КУ ЗАО "ИПОТЕК БАНК" - ГК "АСВ"" RegN="2794" CntrCd="RU" Rgn="45" Ind="109240" Tnp="г" Nnp="Москва" Adr="ул Высоцкого, 4" DateIn="2015-07-16" PtType="90" Srvcs="1" XchType="0" UID="4525603000" ParticipantStatus="PSAC">
+<RstrList Rstr="URRS" RstrDate="2016-06-15"/>
+</ParticipantInfo>
+<Accounts Account="30101810445250000603" RegulationAccountType="CRSA" CK="04" AccountCBRBIC="044525000" DateIn="2016-06-02" AccountStatus="ACAC"/>
+</BICDirectoryEntry>
+<BICDirectoryEntry BIC="044525608">
+<ParticipantInfo NameP="КУ ООО КБ "ДОРИС БАНК" - ГК "АСВ"" RegN="1679" CntrCd="RU" Rgn="45" Ind="109240" Tnp="г" Nnp="Москва" Adr="ул Высоцкого, 4" DateIn="2015-12-18" PtType="90" Srvcs="1" XchType="0" UID="4525608000" ParticipantStatus="PSAC">
+<RstrList Rstr="URRS" RstrDate="2015-12-18"/>
+</ParticipantInfo>
+<Accounts Account="30101810945250000608" RegulationAccountType="CRSA" CK="09" AccountCBRBIC="044525000" DateIn="2015-09-22" AccountStatus="ACAC"/>
+</BICDirectoryEntry>
+...
+</ED807>
