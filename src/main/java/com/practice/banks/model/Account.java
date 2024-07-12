@@ -27,11 +27,10 @@ public class Account {
     private Date DateIn;
     private String AccountStatus;
 
-    //@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    //@OnDelete(action = OnDeleteAction.CASCADE)
-    //@JsonIgnore
-    //@JoinColumn(name="id", nullable=false)
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    @JoinColumn(name="bankId", nullable=false)
     private Bank bank;
 
     public Long getId() {

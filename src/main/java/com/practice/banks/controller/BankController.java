@@ -1,7 +1,7 @@
 package com.practice.banks.controller;
 
 import com.practice.banks.model.Bank;
-import com.practice.banks.repository.BICDirectoryRepository;
+import com.practice.banks.repository.DirectoryRepository;
 import com.practice.banks.service.BankService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class BankController {
     @Autowired
     private final BankService service;
     @Autowired
-    private final BICDirectoryRepository bicDirectoryRepo;
+    private final DirectoryRepository bicDirectoryRepo;
 
 
     @GetMapping("/find_all_banks")

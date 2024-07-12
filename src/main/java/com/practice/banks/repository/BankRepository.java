@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface BankRepository extends JpaRepository<Bank, Long> {
     @Transactional
     void deleteById(Long id);
-    //List<Bank> findByBICDirectoryId(Long id);
+    List<Bank> findByBICDirectoryId(Long id);
     Optional<Bank> findById(Long id);
 
 }

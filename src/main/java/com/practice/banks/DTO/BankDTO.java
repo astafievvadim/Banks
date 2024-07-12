@@ -1,8 +1,7 @@
 package com.practice.banks.DTO;
 
 import com.practice.banks.model.Account;
-import com.practice.banks.model.BICDirectory;
-import com.practice.banks.model.Bank;
+import com.practice.banks.model.Directory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,7 +29,6 @@ public class BankDTO {
     private String XchType;
     private String UID;
     private String ParticipantStatus;
-
-    private BICDirectory bicDirectory;
+    private Directory directory;
     private Set<Account> accounts;
 }

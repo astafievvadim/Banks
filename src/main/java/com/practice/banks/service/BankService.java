@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface BankService {
     List<Bank> findAllBank();
     Bank saveBank(Bank bank);
-    //List<Bank> findByBICDirectoryId(Long id);
+    List<Bank> findByBICDirectoryId(Long id);
     Optional<Bank> findById(Long id);
     Bank updateBank(Bank bank);
     void deleteBank(Long id);

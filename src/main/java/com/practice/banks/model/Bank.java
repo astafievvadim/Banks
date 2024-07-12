@@ -23,7 +23,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class Bank {
 
-    //If I need something to be not empty, I should add @NonNull before it. Good luck for me
+    //If I need something to be not empty, I should add @NonNull before it. Good luck to me
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,14 +44,12 @@ public class Bank {
     private String UID;
     private String ParticipantStatus;
 
-    /*
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    @JoinColumn(name="id", nullable=false)
-    */
-    @ManyToOne
-    private BICDirectory bicDirectory;
+    @JoinColumn(name="directoryId", nullable=false)
+    private Directory directory;
 
     //@OneToMany(mappedBy="bankId")
     @OneToMany(mappedBy = "bank")
@@ -179,12 +177,12 @@ public class Bank {
         ParticipantStatus = participantStatus;
     }
 
-    public BICDirectory getBicDirectory() {
-        return bicDirectory;
+    public Directory getDirectory() {
+        return directory;
     }
 
-    public void setBicDirectory(BICDirectory bicDirectory) {
-        this.bicDirectory = bicDirectory;
+    public void setDirectory(Directory directory) {
+        this.directory = directory;
     }
 
     public Set<Account> getAccounts() {

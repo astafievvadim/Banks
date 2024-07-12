@@ -28,12 +28,12 @@ public class BankServiceImpl implements BankService{
     public Bank saveBank(Bank bank) {
         return repository.save(bank);
     }
-/*
+
     @Override
     public List<Bank> findByBICDirectoryId(Long id) {
         return repository.findByBICDirectoryId(id);
     }
- */
+
     @Override
     public Optional<Bank> findById(Long id) {
         return repository.findById(id);

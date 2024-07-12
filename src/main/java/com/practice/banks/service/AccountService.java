@@ -11,7 +11,7 @@ public interface AccountService {
 
     List<Account> findAllAccount();
     Account saveAccount(Account account);
-    //List<Account> findByBankId(Long id);
+    List<Account> findByBankId(Long id);
     Optional<Account> findById(Long id);
     Account updateAccount(Account account);
     void deleteAccount(Long id);

@@ -2,7 +2,6 @@ package com.practice.banks.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
@@ -11,12 +10,12 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "bicDirectory")
-public class BICDirectory {
+@Table(name = "directory")
+public class Directory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bicDirectory_id")
+    @Column(name = "directory_id")
     private Long id;
 
     private String Name;
@@ -31,17 +30,17 @@ public class BICDirectory {
     private String DirectoryVersion;
 
     //@OneToMany(mappedBy="bicDirectoryId")
-    @OneToMany(mappedBy = "bicDirectory")
+    @OneToMany(mappedBy = "directory")
     private Set<Bank> banks =  new HashSet<>();
 
     public void addBank(Bank bank){
         banks.add(bank);
-        bank.setBicDirectory(this);
+        bank.setDirectory(this);
     }
 
     public void removeBank(Bank bank){
         banks.remove(bank);
-        bank.setBicDirectory(null);
+        bank.setDirectory(null);
     }
 
     public Long getId() {

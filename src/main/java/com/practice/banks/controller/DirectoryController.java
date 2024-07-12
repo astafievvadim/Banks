@@ -1,8 +1,8 @@
 package com.practice.banks.controller;
 
 
-import com.practice.banks.model.BICDirectory;
-import com.practice.banks.service.BICDirectoryService;
+import com.practice.banks.model.Directory;
+import com.practice.banks.service.DirectoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,29 +13,29 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/bics")
 @AllArgsConstructor
-public class BICDirectoryController {
+public class DirectoryController {
 
     @Autowired
-    private final BICDirectoryService service;
+    private final DirectoryService service;
 
     @GetMapping("/find_all_bics")
-    public List<BICDirectory> findAllBIC() {
+    public List<Directory> findAllBIC() {
         return service.findAllBICDirectory();
     }
 
     @PostMapping("/save_BIC")
-    public String saveBIC(@RequestBody BICDirectory BIC) {
+    public String saveBIC(@RequestBody Directory BIC) {
         service.saveBICDirectory(BIC);
         return "BIC successfully saved";
     }
 
     @GetMapping("/{id}")
-    public Optional<BICDirectory> findById(@PathVariable Long id) {
+    public Optional<Directory> findById(@PathVariable Long id) {
         return service.findById(id);
     }
 
     @PutMapping("/update_BIC")
-    public BICDirectory updateBIC(@RequestBody BICDirectory BIC) {
+    public Directory updateBIC(@RequestBody Directory BIC) {
         return service.updateBICDirectory(BIC);
     }
 

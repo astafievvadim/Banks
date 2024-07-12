@@ -1,7 +1,7 @@
 package com.practice.banks.service;
 
-import com.practice.banks.model.BICDirectory;
-import com.practice.banks.repository.BICDirectoryRepository;
+import com.practice.banks.model.Directory;
+import com.practice.banks.repository.DirectoryRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -14,27 +14,27 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 @Primary
-public class BICDirectoryServiceImpl implements BICDirectoryService {
+public class DirectoryServiceImpl implements DirectoryService {
 @Autowired
-    private final BICDirectoryRepository repository;
+    private final DirectoryRepository repository;
     @Override
-    public List<BICDirectory> findAllBICDirectory() {
+    public List<Directory> findAllBICDirectory() {
         return repository.findAll();
     }
 
     @Override
-    public BICDirectory saveBICDirectory(BICDirectory BICDirectory) {
-        return repository.save(BICDirectory);
+    public Directory saveBICDirectory(Directory Directory) {
+        return repository.save(Directory);
     }
 
     @Override
-    public Optional<BICDirectory> findById(Long id) {
+    public Optional<Directory> findById(Long id) {
         return repository.findById(id);
     }
 
     @Override
-    public BICDirectory updateBICDirectory(BICDirectory BICDirectory) {
-        return repository.save(BICDirectory);
+    public Directory updateBICDirectory(Directory Directory) {
+        return repository.save(Directory);
     }
     @Transactional
     @Override

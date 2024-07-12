@@ -25,14 +25,14 @@ public class AccountServiceImpl implements AccountService{
     public Account saveAccount(Account account) {
         return repository.save(account);
     }
-/*
+
     @Override
     public List<Account> findByBankId(Long id) {
         return repository.findByBankId(id);
     }
 
 
- */
+
     @Override
     public Optional<Account> findById(Long id) {
         return repository.findById(id);

@@ -14,5 +14,5 @@ public interface AccountRepository extends JpaRepository<Account,Long> {
     @Transactional
     void deleteById(Long id);
     Optional<Account> findById(Long id);
-    //List<Account> findByBankId(Long id);
+    List<Account> findByBankId(Long id);
 }

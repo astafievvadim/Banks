@@ -13,7 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BICDirectoryDTO {
+public class DirectoryDTO {
     private Long id;
     private String Name;
     private String xmlns;
