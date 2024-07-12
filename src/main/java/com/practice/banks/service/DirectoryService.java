@@ -8,9 +8,9 @@ import java.util.Optional;
 
 @Service
 public interface DirectoryService {
-    List<Directory> findAllBICDirectory();
-    Directory saveBICDirectory(Directory Directory);
+    List<Directory> findAllDirectory();
+    Directory saveDirectory(Directory Directory);
     Optional<Directory> findById(Long id);
-    Directory updateBICDirectory(Directory Directory);
-    void deleteBICDirectory(Long id);
+    Directory updateDirectory(Directory Directory);
+    void deleteDirectory(Long id);
 }

@@ -18,12 +18,12 @@ public class DirectoryServiceImpl implements DirectoryService {
 @Autowired
     private final DirectoryRepository repository;
     @Override
-    public List<Directory> findAllBICDirectory() {
+    public List<Directory> findAllDirectory() {
         return repository.findAll();
     }
 
     @Override
-    public Directory saveBICDirectory(Directory Directory) {
+    public Directory saveDirectory(Directory Directory) {
         return repository.save(Directory);
     }
 
@@ -33,12 +33,12 @@ public class DirectoryServiceImpl implements DirectoryService {
     }
 
     @Override
-    public Directory updateBICDirectory(Directory Directory) {
+    public Directory updateDirectory(Directory Directory) {
         return repository.save(Directory);
     }
     @Transactional
     @Override
-    public void deleteBICDirectory(Long id) {
+    public void deleteDirectory(Long id) {
         repository.deleteById(id);
     }
 }

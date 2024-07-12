@@ -30,8 +30,8 @@ public class BankServiceImpl implements BankService{
     }
 
     @Override
-    public List<Bank> findByBICDirectoryId(Long id) {
-        return repository.findByBICDirectoryId(id);
+    public List<Bank> findByDirectoryId(Long id) {
+        return repository.findByDirectoryId(id);
     }
 
     @Override

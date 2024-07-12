@@ -1,6 +1,8 @@
 package com.practice.banks.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.practice.banks.jasonDeserializer.BankDeserializer;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
@@ -13,7 +15,7 @@ import java.util.Set;
 /* @TODO:
     1. Split this class into a dto with @data and a class @entity;
     2. Find a way to parse huge XML into Java fast
-    3.
+    3. DO NOT FORGET TO CHANGE TYPES OF DATA, STRING!!!!!!!!!!!
 
  */
 
@@ -21,6 +23,7 @@ import java.util.Set;
 @Table(name = "bank")
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonDeserialize(using = BankDeserializer.class)
 public class Bank {
 
     //If I need something to be not empty, I should add @NonNull before it. Good luck to me
@@ -29,7 +32,6 @@ public class Bank {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="bank_id")
     private Long id;
-
     private String NameP;
     private String Rgn;
     private String Ind;
