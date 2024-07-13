@@ -1,6 +1,6 @@
 package com.practice.banks.DTO;
 
-import com.practice.banks.model.Bank;
+import com.practice.banks.model.Participant;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,5 +25,5 @@ public class DirectoryDTO {
     private String InfoTypeCode;
     private Date BusinessDay;
     private String DirectoryVersion;
-    private Set<Bank> banks;
+    private Set<Participant> participants;
 }

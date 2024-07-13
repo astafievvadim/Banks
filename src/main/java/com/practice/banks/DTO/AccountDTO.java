@@ -1,6 +1,6 @@
 package com.practice.banks.DTO;
 
-import com.practice.banks.model.Bank;
+import com.practice.banks.model.Participant;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,5 +22,5 @@ public class AccountDTO {
     private Date DateIn;
     private String AccountStatus;
 
-    private Bank bank;
+    private Participant participant;
 }

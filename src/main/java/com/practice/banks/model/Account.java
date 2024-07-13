@@ -3,7 +3,6 @@ package com.practice.banks.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -19,7 +18,6 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="account_id")
     private Long id;
-
     private String Account;
     private String RegulationAccountType;
     private String CK_;
@@ -30,8 +28,8 @@ public class Account {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    @JoinColumn(name="bankId", nullable=false)
-    private Bank bank;
+    @JoinColumn(name="entryId", nullable=false)
+    private Participant participant;
 
     public Long getId() {
         return id;
@@ -89,11 +87,11 @@ public class Account {
         AccountStatus = accountStatus;
     }
 
-    public Bank getBank() {
-        return bank;
+    public Participant getParticipant() {
+        return participant;
     }
 
-    public void setBank(Bank bank) {
-        this.bank = bank;
+    public void setParticipant(Participant participant) {
+        this.participant = participant;
     }
 }

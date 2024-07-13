@@ -14,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BankDTO {
+public class ParticipantDTO {
     private Long id;
     private String NameP;
     private String Rgn;

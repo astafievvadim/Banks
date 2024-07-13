@@ -1,7 +1,7 @@
 package com.practice.banks.controller;
 
 import com.practice.banks.model.Account;
-import com.practice.banks.repository.BankRepository;
+import com.practice.banks.repository.ParticipantRepository;
 import com.practice.banks.service.AccountService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class AccountController {
     private final AccountService service;
 
     @Autowired
-    private final BankRepository bank;
+    private final ParticipantRepository bank;
 
     @GetMapping("/find_all_Accounts")
     public List<Account> findAllAccount() {
@@ -37,7 +37,7 @@ public class AccountController {
         return service.findById(id);
     }
 /*
-    @GetMapping("/banks/{BankId}/accounts/{bankId}")
+    @GetMapping("/participants/{BankId}/accounts/{bankId}")
     public List<Account> findAccountByBankID(@PathVariable Long BankId) {
         return service.findByBankId(BankId);
     }

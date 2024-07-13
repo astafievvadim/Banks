@@ -2,7 +2,7 @@ package com.practice.banks.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.practice.banks.jasonDeserializer.BankDeserializer;
+import com.practice.banks.jasonDeserializer.ParticipantDeserializer;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
@@ -17,21 +17,21 @@ import java.util.Set;
     2. XML -> JSON -> db;
     3. Getting rid of String is not top priority, but it's still something I must do
     4. Don't forget about deserializers
-    5.
+    5. Entry is the file. Entry has multiple directories, each one of them _must_ have a participant, and additionaly accounts and restrictions. REWORK THAT, DONT FORGET
  */
 
 @Entity
-@Table(name = "bank")
+@Table(name = "participant")
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonDeserialize(using = BankDeserializer.class)
-public class Bank {
+@JsonDeserialize(using = ParticipantDeserializer.class)
+public class Participant {
 
     //If I need something to be not empty, I should add @NonNull before it. Good luck to me
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="bank_id")
+    @Column(name="participant_id")
     private Long id;
     private String NameP;
     private String Rgn;
@@ -55,17 +55,17 @@ public class Bank {
     private Directory directory;
 
     //@OneToMany(mappedBy="bankId")
-    @OneToMany(mappedBy = "bank")
+    @OneToMany(mappedBy = "participant")
     private Set<Account> accounts  = new HashSet<>();
 
     public void addBank(Account acc){
         accounts.add(acc);
-        acc.setBank(this);
+        acc.setParticipant(this);
     }
 
     public void removeBank(Account acc){
         accounts.remove(acc);
-        acc.setBank(null);
+        acc.setParticipant(null);
     }
 
     public Long getId() {

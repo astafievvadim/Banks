@@ -1,7 +1,7 @@
 package com.practice.banks.service;
 
-import com.practice.banks.model.Bank;
-import com.practice.banks.repository.BankRepository;
+import com.practice.banks.model.Participant;
+import com.practice.banks.repository.ParticipantRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -14,34 +14,34 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 @Primary
-public class BankServiceImpl implements BankService{
+public class ParticipantServiceImpl implements ParticipantService {
     @Autowired
-    private final BankRepository repository;
+    private final ParticipantRepository repository;
 
 
     @Override
-    public List<Bank> findAllBank() {
+    public List<Participant> findAllBank() {
         return repository.findAll();
     }
 
     @Override
-    public Bank saveBank(Bank bank) {
-        return repository.save(bank);
+    public Participant saveBank(Participant participant) {
+        return repository.save(participant);
     }
 
     @Override
-    public List<Bank> findByDirectoryId(Long id) {
-        return repository.findByDirectoryId(id);
+    public List<Participant> findByEntryId(Long id) {
+        return repository.findByEntryId(id);
     }
 
     @Override
-    public Optional<Bank> findById(Long id) {
+    public Optional<Participant> findById(Long id) {
         return repository.findById(id);
     }
 
     @Override
-    public Bank updateBank(Bank bank) {
-        return repository.save(bank);
+    public Participant updateBank(Participant participant) {
+        return repository.save(participant);
     }
 
     @Override

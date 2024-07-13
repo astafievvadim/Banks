@@ -29,18 +29,17 @@ public class Directory {
     private Date BusinessDay;
     private String DirectoryVersion;
 
-    //@OneToMany(mappedBy="bicDirectoryId")
     @OneToMany(mappedBy = "directory")
-    private Set<Bank> banks =  new HashSet<>();
+    private Set<Participant> participants =  new HashSet<>();
 
-    public void addBank(Bank bank){
-        banks.add(bank);
-        bank.setDirectory(this);
+    public void addBank(Participant participant){
+        participants.add(participant);
+        participant.setDirectory(this);
     }
 
-    public void removeBank(Bank bank){
-        banks.remove(bank);
-        bank.setDirectory(null);
+    public void removeBank(Participant participant){
+        participants.remove(participant);
+        participant.setDirectory(null);
     }
 
     public Long getId() {
@@ -131,12 +130,12 @@ public class Directory {
         DirectoryVersion = directoryVersion;
     }
 
-    public Set<Bank> getBanks() {
-        return banks;
+    public Set<Participant> getParticipants() {
+        return participants;
     }
 
-    public void setBanks(Set<Bank> banks) {
-        this.banks = banks;
+    public void setParticipants(Set<Participant> participants) {
+        this.participants = participants;
     }
 }
 
