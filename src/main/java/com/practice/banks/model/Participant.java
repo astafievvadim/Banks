@@ -1,72 +1,53 @@
 package com.practice.banks.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.practice.banks.jasonDeserializer.ParticipantDeserializer;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /* @TODO:
     1. Split this class into a dto with @data and a class @entity;
     2. XML -> JSON -> db;
     3. Getting rid of String is not top priority, but it's still something I must do
     4. Don't forget about deserializers
-    5. Entry is the file. Entry has multiple directories, each one of them _must_ have a participant, and additionaly accounts and restrictions. REWORK THAT, DONT FORGET
+    5. Dictionary is the file. Dictionary has multiple entries*, each one of them _must_ have a participant, and additionaly accounts and restrictions. REWORK THAT, DONT FORGET
  */
 
 @Entity
 @Table(name = "participant")
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonDeserialize(using = ParticipantDeserializer.class)
-public class Participant {
 
-    //If I need something to be not empty, I should add @NonNull before it. Good luck to me
+public class Participant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="participant_id")
     private Long id;
-    private String NameP;
-    private String Rgn;
-    private String Ind;
-    private String Tnp;
-    private String Nnp;
-    private String Adr;
-    private String PrntBIC;
-    private Date DateIn;
-    private String PtType;
-    private String Srvcs;
+
+    private String NameP; //russian
+    private String EnglName; //obv english
+    private String RegN; //9-digit, but text;
+    private String CntrCd; //2-digit countryCode;
+    private String Rgn; //2-digit, territoryCode;
+    private String Ind; //6-digit, Index;
+    private String Tnp; //5-digit, city-type etc;
+    private String Nnp; //City name;
+    private String Adr; //address;
+    private String PrntBIC; //9-digit
+    private Date DateIn; //YYYY-MM-DD;
+    private Date DateOut; //YYYY-MM-DD;
+    private String PtType; //2-digit;
+    private String Srvcs; //1-digit;
     private String XchType;
     private String UID;
     private String ParticipantStatus;
 
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(mappedBy = "participant")
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    @JoinColumn(name="directoryId", nullable=false)
-    private Directory directory;
-
-    //@OneToMany(mappedBy="bankId")
-    @OneToMany(mappedBy = "participant")
-    private Set<Account> accounts  = new HashSet<>();
-
-    public void addBank(Account acc){
-        accounts.add(acc);
-        acc.setParticipant(this);
-    }
-
-    public void removeBank(Account acc){
-        accounts.remove(acc);
-        acc.setParticipant(null);
-    }
+    private Entry entry;
 
     public Long getId() {
         return id;
@@ -82,6 +63,30 @@ public class Participant {
 
     public void setNameP(String nameP) {
         NameP = nameP;
+    }
+
+    public String getEnglName() {
+        return EnglName;
+    }
+
+    public void setEnglName(String englName) {
+        EnglName = englName;
+    }
+
+    public String getRegN() {
+        return RegN;
+    }
+
+    public void setRegN(String regN) {
+        RegN = regN;
+    }
+
+    public String getCntrCd() {
+        return CntrCd;
+    }
+
+    public void setCntrCd(String cntrCd) {
+        CntrCd = cntrCd;
     }
 
     public String getRgn() {
@@ -140,6 +145,14 @@ public class Participant {
         DateIn = dateIn;
     }
 
+    public Date getDateOut() {
+        return DateOut;
+    }
+
+    public void setDateOut(Date dateOut) {
+        DateOut = dateOut;
+    }
+
     public String getPtType() {
         return PtType;
     }
@@ -180,19 +193,11 @@ public class Participant {
         ParticipantStatus = participantStatus;
     }
 
-    public Directory getDirectory() {
-        return directory;
+    public Entry getEntry() {
+        return entry;
     }
 
-    public void setDirectory(Directory directory) {
-        this.directory = directory;
-    }
-
-    public Set<Account> getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(Set<Account> accounts) {
-        this.accounts = accounts;
+    public void setEntry(Entry entry) {
+        this.entry = entry;
     }
 }

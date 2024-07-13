@@ -18,18 +18,23 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="account_id")
     private Long id;
+
     private String Account;
     private String RegulationAccountType;
-    private String CK_;
+    private String CK;
     private String AccountCBRBIC;
     private Date DateIn;
+    private Date DateOut;
     private String AccountStatus;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     @JoinColumn(name="entryId", nullable=false)
-    private Participant participant;
+    private Entry entry;
+
+    @OneToMany(mappedBy = "account")
+    private AccRestriction accRestriction;
 
     public Long getId() {
         return id;
@@ -55,12 +60,12 @@ public class Account {
         RegulationAccountType = regulationAccountType;
     }
 
-    public String getCK_() {
-        return CK_;
+    public String getCK() {
+        return CK;
     }
 
-    public void setCK_(String CK_) {
-        this.CK_ = CK_;
+    public void setCK(String CK) {
+        this.CK = CK;
     }
 
     public String getAccountCBRBIC() {
@@ -79,6 +84,14 @@ public class Account {
         DateIn = dateIn;
     }
 
+    public Date getDateOut() {
+        return DateOut;
+    }
+
+    public void setDateOut(Date dateOut) {
+        DateOut = dateOut;
+    }
+
     public String getAccountStatus() {
         return AccountStatus;
     }
@@ -87,11 +100,19 @@ public class Account {
         AccountStatus = accountStatus;
     }
 
-    public Participant getParticipant() {
-        return participant;
+    public Entry getEntry() {
+        return entry;
     }
 
-    public void setParticipant(Participant participant) {
-        this.participant = participant;
+    public void setEntry(Entry entry) {
+        this.entry = entry;
+    }
+
+    public AccRestriction getAccRestriction() {
+        return accRestriction;
+    }
+
+    public void setAccRestriction(AccRestriction accRestriction) {
+        this.accRestriction = accRestriction;
     }
 }

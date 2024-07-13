@@ -8,8 +8,9 @@ import com.practice.banks.model.Account;
 
 import java.io.IOException;
 
-public class AccountDeserializer extends JsonDeserializer<Account> {
-
+public class OLD_SOON_TO_BE_REMOVED_AccountDeserializer extends JsonDeserializer<Account> {
+    //add this before class needed to be deserialized
+    //@JsonDeserialize(using = ParticipantDeserializer.class)
     @Override
     public Account deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
         return new Account();

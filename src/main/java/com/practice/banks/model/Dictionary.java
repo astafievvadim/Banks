@@ -7,40 +7,35 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+/*
+    Dictionary has multiple entries; @OneToMany entry-
+ */
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name="dictionary")
 @Entity
-@Table(name = "directory")
-public class Directory {
+public class Dictionary {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "directory_id")
+    @Column(name = "dictionary_id")
     private Long id;
+    @Lob
+    private byte[] file; // actual file;
 
-    private String Name;
-    private String xmlns;
-    private String EDNo;
-    private String EDDate;
-    private String EDAuthor;
-    private String CreationReason;
-    private Date CreationDateTime;
-    private String InfoTypeCode;
-    private Date BusinessDay;
-    private String DirectoryVersion;
+    private String name; //just a name
+    private String EDNo; //9-digit number
+    private Date EDDate; //YYYY-MM-DD
+    private String EDAuthor; //10-digit number;
+    private String EDReceiver; //10-digit number
+    private String CreationReason; //4-digit number
+    private Date CreationDateTime; //DIFFERENT TYPE! YYYY-MM-DD hh:mm:ss
+    private String InfoTypeCode; // 4-digit number;
+    private String BusinessDay; // YYYY-MM-DD;
+    private String DirectoryVersion; //small-digit number;
 
-    @OneToMany(mappedBy = "directory")
-    private Set<Participant> participants =  new HashSet<>();
-
-    public void addBank(Participant participant){
-        participants.add(participant);
-        participant.setDirectory(this);
-    }
-
-    public void removeBank(Participant participant){
-        participants.remove(participant);
-        participant.setDirectory(null);
-    }
+    @OneToMany(mappedBy = "dictionary")
+    private Set<Entry> entries = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -50,20 +45,20 @@ public class Directory {
         this.id = id;
     }
 
+    public byte[] getFile() {
+        return file;
+    }
+
+    public void setFile(byte[] file) {
+        this.file = file;
+    }
+
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
-    }
-
-    public String getXmlns() {
-        return xmlns;
-    }
-
-    public void setXmlns(String xmlns) {
-        this.xmlns = xmlns;
+        this.name = name;
     }
 
     public String getEDNo() {
@@ -74,11 +69,11 @@ public class Directory {
         this.EDNo = EDNo;
     }
 
-    public String getEDDate() {
+    public Date getEDDate() {
         return EDDate;
     }
 
-    public void setEDDate(String EDDate) {
+    public void setEDDate(Date EDDate) {
         this.EDDate = EDDate;
     }
 
@@ -88,6 +83,14 @@ public class Directory {
 
     public void setEDAuthor(String EDAuthor) {
         this.EDAuthor = EDAuthor;
+    }
+
+    public String getEDReceiver() {
+        return EDReceiver;
+    }
+
+    public void setEDReceiver(String EDReceiver) {
+        this.EDReceiver = EDReceiver;
     }
 
     public String getCreationReason() {
@@ -114,11 +117,11 @@ public class Directory {
         InfoTypeCode = infoTypeCode;
     }
 
-    public Date getBusinessDay() {
+    public String getBusinessDay() {
         return BusinessDay;
     }
 
-    public void setBusinessDay(Date businessDay) {
+    public void setBusinessDay(String businessDay) {
         BusinessDay = businessDay;
     }
 
@@ -130,12 +133,11 @@ public class Directory {
         DirectoryVersion = directoryVersion;
     }
 
-    public Set<Participant> getParticipants() {
-        return participants;
+    public Set<Entry> getEntries() {
+        return entries;
     }
 
-    public void setParticipants(Set<Participant> participants) {
-        this.participants = participants;
+    public void setEntries(Set<Entry> entries) {
+        this.entries = entries;
     }
 }
-

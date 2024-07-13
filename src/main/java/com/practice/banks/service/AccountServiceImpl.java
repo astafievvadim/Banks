@@ -27,8 +27,13 @@ public class AccountServiceImpl implements AccountService{
     }
 
     @Override
-    public List<Account> findByBankId(Long id) {
-        return repository.findByBankId(id);
+    public List<Account> findByDictionaryId(Long id) {
+        return null;
+    }
+
+    @Override
+    public List<Account> findByEntryId(Long id) {
+        return repository.findByEntryId(id);
     }
 
 

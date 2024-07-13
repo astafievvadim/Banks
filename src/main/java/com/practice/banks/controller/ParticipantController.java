@@ -1,7 +1,6 @@
 package com.practice.banks.controller;
 
 import com.practice.banks.model.Participant;
-import com.practice.banks.repository.DirectoryRepository;
 import com.practice.banks.service.ParticipantService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+//REWORK THIS TOO;
 @RestController
 @RequestMapping("/api/v1/participants")
 @AllArgsConstructor
@@ -17,9 +16,6 @@ public class ParticipantController {
 
     @Autowired
     private final ParticipantService service;
-    @Autowired
-    private final DirectoryRepository bicDirectoryRepo;
-
 
     @GetMapping("/find_all_banks")
     public List<Participant> findAllBank() {

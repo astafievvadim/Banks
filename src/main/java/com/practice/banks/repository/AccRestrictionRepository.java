@@ -2,7 +2,6 @@ package com.practice.banks.repository;
 
 import com.practice.banks.model.AccRestriction;
 import com.practice.banks.model.Account;
-import com.practice.banks.model.Entry;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,12 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AccountRepository extends JpaRepository<Account,Long> {
-
+public interface AccRestrictionRepository extends JpaRepository<AccRestriction,Long> {
     @Transactional
     void deleteById(Long id);
     void updateById(Long id);
-    Optional<Account> findById(Long id);
-    List<Account> findByEntryId(Long id);
+    Optional<AccRestriction> findById(Long id);
+    List<AccRestriction> findByAccountId(Long id);
 
 }

@@ -18,7 +18,6 @@ public class ParticipantServiceImpl implements ParticipantService {
     @Autowired
     private final ParticipantRepository repository;
 
-
     @Override
     public List<Participant> findAllBank() {
         return repository.findAll();
