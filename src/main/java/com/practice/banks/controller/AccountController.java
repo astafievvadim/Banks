@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/api/v1/accounts")
+//@RestController
+//@RequestMapping("/api/v1/accounts")
 @AllArgsConstructor
 public class AccountController {
 
@@ -22,8 +22,8 @@ public class AccountController {
     private final ParticipantRepository bank;
 
     @GetMapping("/find_all_Accounts")
-    public List<Account> findAllAccount() {
-        return service.findAllAccount();
+    public List<Account> findAll() {
+        return service.findAll();
     }
 
     @PostMapping("/save_Account")
@@ -36,12 +36,12 @@ public class AccountController {
     public Optional<Account> findByID(@PathVariable Long id) {
         return service.findById(id);
     }
-/*
-    @GetMapping("/participants/{BankId}/accounts/{bankId}")
-    public List<Account> findAccountByBankID(@PathVariable Long BankId) {
-        return service.findByBankId(BankId);
+
+    @GetMapping("/participants/{EntryId}/accounts/{bankId}")
+    public List<Account> findAccountByEntryID(@PathVariable Long EntryId) {
+        return service.findByEntryId(EntryId);
     }
-*/
+
     @PutMapping("/update_Account")
     public Account updateAccount(@RequestBody Account Account) {
         return service.updateAccount(Account);

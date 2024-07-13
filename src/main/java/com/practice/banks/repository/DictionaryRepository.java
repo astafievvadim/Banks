@@ -9,7 +9,6 @@ import java.util.Optional;
 public interface DictionaryRepository extends JpaRepository<Dictionary,Long> {
     @Transactional
     void deleteById(Long id);
-    void updateById(Long id);
     Optional<Dictionary> findById(Long id);
 
 }

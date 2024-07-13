@@ -21,7 +21,7 @@ public class AccRestrictionServiceImpl implements AccRestrictionService{
     @Autowired
     private AccRestrictionRepository rep;
     @Override
-    public List<AccRestriction> findAllAccRestriction() {
+    public List<AccRestriction> findAll() {
         return rep.findAll();
     }
 

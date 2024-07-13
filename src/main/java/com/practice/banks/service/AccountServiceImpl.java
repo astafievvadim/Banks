@@ -17,7 +17,7 @@ public class AccountServiceImpl implements AccountService{
 @Autowired
     private final AccountRepository repository;
     @Override
-    public List<Account> findAllAccount() {
+    public List<Account> findAll() {
         return repository.findAll();
     }
 
@@ -27,16 +27,9 @@ public class AccountServiceImpl implements AccountService{
     }
 
     @Override
-    public List<Account> findByDictionaryId(Long id) {
-        return null;
-    }
-
-    @Override
     public List<Account> findByEntryId(Long id) {
         return repository.findByEntryId(id);
     }
-
-
 
     @Override
     public Optional<Account> findById(Long id) {

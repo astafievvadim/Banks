@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-//REWORK THIS TOO;
+
 @RestController
 @RequestMapping("/api/v1/participants")
 @AllArgsConstructor
@@ -17,14 +17,14 @@ public class ParticipantController {
     @Autowired
     private final ParticipantService service;
 
-    @GetMapping("/find_all_banks")
-    public List<Participant> findAllBank() {
-        return service.findAllBank();
+    @GetMapping("/find_all_participants")
+    public List<Participant> findAllParticipant() {
+        return service.findAll();
     }
 
-    @PostMapping("/save_bank")
-    public String saveBank(@RequestBody Participant participant) {
-        service.saveBank(participant);
+    @PostMapping("/save_participant")
+    public String saveParticipant(@RequestBody Participant participant) {
+        service.saveParticipant(participant);
         return "Participant successfully saved";
     }
 
@@ -32,21 +32,21 @@ public class ParticipantController {
     public Optional<Participant> findByID(@PathVariable Long id) {
         return service.findById(id);
     }
-/*
-    @GetMapping("/bics/{BICDirectoryId}/participants/{bankId}")
-    public List<Participant> findBankByBICDirectoryID(@PathVariable Long BICDirectoryId) {
+
+    @PutMapping("/update_participant")
+    public Participant updateParticipant(@RequestBody Participant participant) {
+        return service.updateParticipant(participant);
+    }
+
+    @DeleteMapping("/delete_participant/{id}")
+    public void deleteParticipant(@PathVariable Long id) {
+        service.deleteParticipant(id);
+    }
+    
+        /*
+    @GetMapping("/bics/{BICDirectoryId}/participants/{participantId}")
+    public List<Participant> findParticipantByBICDirectoryID(@PathVariable Long BICDirectoryId) {
         return service.findByBICDirectoryId(BICDirectoryId);
     }
-
-
- */
-    @PutMapping("/update_bank")
-    public Participant updateBank(@RequestBody Participant participant) {
-        return service.updateBank(participant);
-    }
-
-    @DeleteMapping("/delete_bank/{uid}")
-    public void deleteBank(@PathVariable Long id) {
-        service.deleteBank(id);
-    }
+    */
 }

@@ -8,10 +8,12 @@ import java.util.Optional;
 
 @Service
 public interface ParticipantService {
-    List<Participant> findAllBank();
-    Participant saveBank(Participant participant);
+
+    Participant saveParticipant(Participant participant);
     List<Participant> findByEntryId(Long id);
     Optional<Participant> findById(Long id);
-    Participant updateBank(Participant participant);
-    void deleteBank(Long id);
+    Participant updateParticipant(Participant participant);
+    void deleteParticipant(Long id);
+
+    List<Participant> findAll();
 }

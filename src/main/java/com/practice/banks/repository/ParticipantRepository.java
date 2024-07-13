@@ -15,7 +15,6 @@ public interface ParticipantRepository extends JpaRepository<Participant,Long> {
 
     @Transactional
     void deleteById(Long id);
-    void updateById(Long id);
     Optional<Participant> findById(Long id);
     List<Participant> findByEntryId(Long id);
 }

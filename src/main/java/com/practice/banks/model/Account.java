@@ -8,6 +8,9 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -34,7 +37,7 @@ public class Account {
     private Entry entry;
 
     @OneToMany(mappedBy = "account")
-    private AccRestriction accRestriction;
+    private Set<AccRestriction> accRestriction = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -108,11 +111,11 @@ public class Account {
         this.entry = entry;
     }
 
-    public AccRestriction getAccRestriction() {
+    public Set<AccRestriction> getAccRestriction() {
         return accRestriction;
     }
 
-    public void setAccRestriction(AccRestriction accRestriction) {
+    public void setAccRestriction(Set<AccRestriction> accRestriction) {
         this.accRestriction = accRestriction;
     }
 }

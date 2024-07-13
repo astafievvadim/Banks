@@ -8,7 +8,7 @@ import java.util.Optional;
 @Service
 public interface AccRestrictionService {
 
-    List<AccRestriction> findAllAccRestriction();
+    List<AccRestriction> findAll();
     AccRestriction saveAccRestriction(AccRestriction AccRestriction);
     List<AccRestriction> findByAccountId(Long id);
     Optional<AccRestriction> findById(Long id);

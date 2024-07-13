@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/dictionaries")
+@RequestMapping("/api/v1/dictionary")
 @AllArgsConstructor
 public class DictionaryController {
 
@@ -20,8 +20,8 @@ public class DictionaryController {
     private final DictionaryService service;
 
     @GetMapping("/find_all_dictionaries")
-    public List<Dictionary> findAllDictionary() {
-        return service.findAllDictionary();
+    public List<Dictionary> findAll() {
+        return service.findAll();
     }
 
     @PostMapping("/save_Dictionary")

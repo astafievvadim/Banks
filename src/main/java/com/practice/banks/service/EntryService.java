@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 @Service
 public interface EntryService {
-    List<Entry> findAllEntry();
+    List<Entry> findAll();
     Entry saveEntry(Entry Entry);
     List<Entry> findByDictionaryId(Long id);
     Optional<Entry> findById(Long id);

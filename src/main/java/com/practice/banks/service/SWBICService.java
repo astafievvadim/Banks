@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface SWBICService {
-    List<SWBICService> findAllSWBIC();
+    List<SWBICService> findAll();
     SWBICService saveSWBIC(SWBICService SWBIC);
     List<SWBICService> findByDictionaryId(Long id);
     Optional<SWBICService> findById(Long id);

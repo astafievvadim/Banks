@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Service
 public interface DictionaryService {
-    List<Dictionary> findAllDictionary();
+    List<Dictionary> findAll();
     Dictionary saveDictionary(Dictionary Dictionary);
     Optional<Dictionary> findById(Long id);
     Dictionary updateDictionary(Dictionary Dictionary);

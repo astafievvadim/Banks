@@ -16,6 +16,7 @@ public class SWBIC {
     private String SWBIC;
     private String DefaultSWBIC;
 
-    @OneToOne(mappedBy = "entry")
+    @OneToOne
+    @JoinColumn(name="participantId")
     private Participant participant;
 }

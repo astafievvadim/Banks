@@ -12,7 +12,6 @@ import java.util.Optional;
 public interface EntryRepository extends JpaRepository<Entry,Long> {
     @Transactional
     void deleteById(Long id);
-    void updateById(Long id);
     Optional<Entry> findById(Long id);
     List<Entry> findByDictionaryId(Long id);
 

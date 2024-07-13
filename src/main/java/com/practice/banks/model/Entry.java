@@ -31,10 +31,12 @@ public class Entry {
     private Dictionary dictionary;
 
     @NonNull
-    @OneToOne(mappedBy = "entry")
+    @OneToOne
+    @JoinColumn(name="participantId")
     private Participant participant;
 
-    @OneToOne(mappedBy = "entry")
+    @OneToOne
+    @JoinColumn(name="restrictionId")
     private Restriction restriction;
 
     @OneToMany(mappedBy = "entry")

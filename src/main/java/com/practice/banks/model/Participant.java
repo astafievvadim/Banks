@@ -45,7 +45,8 @@ public class Participant {
     private String UID;
     private String ParticipantStatus;
 
-    @OneToOne(mappedBy = "participant")
+    @OneToOne
+    @JoinColumn(name="entryId")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Entry entry;
 

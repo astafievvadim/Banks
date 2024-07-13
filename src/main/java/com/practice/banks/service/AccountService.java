@@ -9,9 +9,8 @@ import java.util.Optional;
 @Service
 public interface AccountService {
 
-    List<Account> findAllAccount();
+    List<Account> findAll();
     Account saveAccount(Account account);
-    List<Account> findByDictionaryId(Long id);
     List<Account> findByEntryId(Long id);
     Optional<Account> findById(Long id);
     Account updateAccount(Account account);

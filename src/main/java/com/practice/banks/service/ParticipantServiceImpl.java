@@ -19,12 +19,12 @@ public class ParticipantServiceImpl implements ParticipantService {
     private final ParticipantRepository repository;
 
     @Override
-    public List<Participant> findAllBank() {
+    public List<Participant> findAll() {
         return repository.findAll();
     }
 
     @Override
-    public Participant saveBank(Participant participant) {
+    public Participant saveParticipant(Participant participant) {
         return repository.save(participant);
     }
 
@@ -39,13 +39,13 @@ public class ParticipantServiceImpl implements ParticipantService {
     }
 
     @Override
-    public Participant updateBank(Participant participant) {
+    public Participant updateParticipant(Participant participant) {
         return repository.save(participant);
     }
 
     @Override
     @Transactional
-    public void deleteBank(Long id) {
+    public void deleteParticipant(Long id) {
             repository.deleteById(id);
     }
 }

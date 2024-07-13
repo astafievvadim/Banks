@@ -19,7 +19,7 @@ public class DictionaryServiceImpl implements DictionaryService {
 @Autowired
     private final DictionaryRepository repository;
     @Override
-    public List<Dictionary> findAllDictionary() {
+    public List<Dictionary> findAll() {
         return repository.findAll();
     }
 
