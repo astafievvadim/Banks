@@ -7,14 +7,6 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Date;
 
-/* @TODO:
-    1. Split this class into a dto with @data and a class @entity;
-    2. XML -> JSON -> db;
-    3. Getting rid of String is not top priority, but it's still something I must do
-    4. Don't forget about deserializers
-    5. Dictionary is the file. Dictionary has multiple entries*, each one of them _must_ have a participant, and additionaly accounts and restrictions. REWORK THAT, DONT FORGET
- */
-
 @Entity
 @Table(name = "participant")
 @NoArgsConstructor
