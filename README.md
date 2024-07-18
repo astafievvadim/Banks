@@ -4,8 +4,8 @@ Central RF bank dictionary API.
 
 Current Stack:
 
-1. Spring
-2. Spring Boot (?)
+1. Spring*
+2. Spring Boot
 3. Jackson PROBABLY
 4. Hibernate
 5. H2 database so it wouldn't require any installation
