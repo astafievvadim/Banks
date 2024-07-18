@@ -17,7 +17,8 @@ Current TODO:
 2. With Dto's add Mappers for all other @entity classes
 3. Rework Controller's and Service's with Dto's in minds
 4. Explore everything around xml's, check tg
-5. Maybe some values should be changed from String, keeping maths in mind
+5. Also don't forget about deserializers
+6. Maybe some values should be changed from String, keeping maths in mind
 
 Long-term TODO:
 
