@@ -20,9 +20,6 @@ public class Dictionary {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "dictionary_id")
     private Long id;
-    @Lob
-    private byte[] file; // actual file;
-
     private String name; //just a name
     private String EDNo; //9-digit number
     private Date EDDate; //YYYY-MM-DD
@@ -43,14 +40,6 @@ public class Dictionary {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public byte[] getFile() {
-        return file;
-    }
-
-    public void setFile(byte[] file) {
-        this.file = file;
     }
 
     public String getName() {

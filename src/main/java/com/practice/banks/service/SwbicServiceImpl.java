@@ -3,29 +3,29 @@ package com.practice.banks.service;
 import java.util.List;
 import java.util.Optional;
 
-public class SWBICServiceImpl implements SWBICService{
+public class SwbicServiceImpl implements SwbicService {
     @Override
-    public List<SWBICService> findAll() {
+    public List<SwbicService> findAll() {
         return null;
     }
 
     @Override
-    public SWBICService saveSWBIC(SWBICService SWBIC) {
+    public SwbicService saveSWBIC(SwbicService SWBIC) {
         return null;
     }
 
     @Override
-    public List<SWBICService> findByDictionaryId(Long id) {
+    public List<SwbicService> findByDictionaryId(Long id) {
         return null;
     }
 
     @Override
-    public Optional<SWBICService> findById(Long id) {
+    public Optional<SwbicService> findById(Long id) {
         return Optional.empty();
     }
 
     @Override
-    public SWBICService updateSWBIC(SWBICService SWBIC) {
+    public SwbicService updateSWBIC(SwbicService SWBIC) {
         return null;
     }
 

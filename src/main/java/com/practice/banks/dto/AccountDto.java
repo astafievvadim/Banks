@@ -1,5 +1,6 @@
 package com.practice.banks.dto;
 
+import com.practice.banks.model.Entry;
 import lombok.Data;
 
 import java.util.Date;
@@ -14,5 +15,6 @@ public class AccountDto {
     private Date DateIn;
     private Date DateOut;
     private String AccountStatus;
+    private Entry entry;
 
 }
